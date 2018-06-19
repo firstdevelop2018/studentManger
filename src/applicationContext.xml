@@ -14,11 +14,11 @@
       <!--加载驱动类-->
       <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
       <!--数据库访问地址-->
-      <property name="url" value="jdbc:mysql://localhost:3306/test"></property>
+      <property name="url" value="jdbc:mysql://localhost:3306/mysql"></property>
       <!--数据库访问用户名-->
       <property name="username" value="root"></property>
       <!--数据库访问密码-->
-      <property name="password" value="1234"></property>
+      <property name="password" value="root"></property>
     </bean>
 
     <!--spring提供的数据库访问操作类 -->

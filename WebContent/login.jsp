@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<center><img src="./images/Photoelly000_TP_V.jpg"/></center>
+<center><img src="./images/header.jpg"/></center>
 <h1 align="center"><a href="all" rel="external nofollow" rel="external nofollow" >进入学員管理主页</a></h1>
 </body>
 </html>

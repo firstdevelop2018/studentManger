@@ -20,6 +20,8 @@ tr:nth-child(odd) {
 	background: #ddd;
 }
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 <script type="text/javascript" >
 	function addCheckForm() {
 		var form = document.getElementById('addForm');
@@ -108,7 +110,7 @@ tr:nth-child(odd) {
 </script>
 </head>
 <body>
-<img src="./images/Photoelly000_TP_V.jpg" />
+<img src="./images/header.jpg" />
 ${msg}
 <h1 align="center">学生情報管理</h1>
 
@@ -121,6 +123,9 @@ ${msg}
 		<td>出生年月</td>
 		<td>年龄</td>
 		<td>分数</td>
+		<td>電話番号</td>
+		<td>メール</td>
+		<td>住所</td>
 	</tr>
 
     <c:forEach items="${students}" var="student" >
@@ -130,8 +135,9 @@ ${msg}
 			<td id="birthday${student.id}">${student.birthday}</td>
 			<td id="age${student.id }">${student.age}</td>
 			<td id="score${student.id}">${student.score}</td>
-
-
+			<td id="score${student.id}">${student.telephone}</td>
+			<td id="score${student.id}">${student.mail}</td>
+			<td id="score${student.id}">${student.address}</td>
 		 </tr>
 	 </c:forEach>
   </table>
