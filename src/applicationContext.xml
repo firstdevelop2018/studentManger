@@ -28,5 +28,7 @@
     <!-- dao层类-->
     <bean id="dao" class="com.student.dao.StudentDao">
     </bean>
+      <bean id="teacherDao" class="com.teacher.dao.TeacherDao">
+    </bean>
 
  </beans>

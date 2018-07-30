@@ -6,49 +6,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>学生管理</title>
+  <title>STUDENT管理</title>
 <link rel="stylesheet" type="text/css" href="./css/all.css"/>
-
+<style type="text/css">
+</style>
 <style type="text/css">
 /* 偶数 */
 tr:nth-child(odd) {
-	background: blue;
+	background: white;
 }
 /* 奇数 */
 		tr:nth-child(even) {
 	background: #ddd;
-}
-.hoge1{
-	color:#333;
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
 }
 </style>
- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script type="text/javascript">
-//サンプル2A
-$(function(){
-	$(".hoge2A").click(function(){
-		$(this).css("background-color","green")
-	});
-});
-</script>
 <script type="text/javascript" >
 	function addCheckForm() {
 		var form = document.getElementById('addForm');
+
 	    var input_name= document.getElementById('addname').value;
 	    var input_birthday= document.getElementById('addbirthday').value;
 	    var input_age= document.getElementById('addage').value;
+	    var input_age= document.getElementById('addsex').value;
 	    var input_score= document.getElementById('addscore').value;
-	    //電話番号の入力checkを追加する
-	    var input_telephone= document.getElementById('addtelephone').value;
-	    var input_address= document.getElementById('addaddress').value;
 
 	    if (input_name == "" || input_name == null) {
-	    	alert("please input your names！！！");
+	    	alert("请输入学員姓名！！！");
 	    	return false;
 	    }
 
 	    if (input_birthday == "" || input_birthday == null) {
-	    	alert("olease input your birthday！！！");
+	    	alert("请输入学員出生年月！！！");
 	    	return false;
 	    }
 
@@ -57,17 +50,12 @@ $(function(){
 	    	return false;
 	    }
 
+	    if (input_sex == "" || input_age == null) {
+	    	alert("请输入学員性別！！！");
+	    	return false;
+	    }
 	    if (input_score == "" || input_score == null) {
 	    	alert("请输入学員成绩！！！");
-	    	return false;
-	    }
-
-	    if (input_telephone == "" || input_telephone == null) {
-	    	alert("電話番号を入力してください！！！");
-	    	return false;
-	    }
-	    if (input_address == "" || input_address == null) {
-	    	alert("住所を入力してください！！！");
 	    	return false;
 	    }
 
@@ -96,7 +84,9 @@ $(function(){
 	    var input_name= document.getElementById('editname');
 	    var input_birthday= document.getElementById('editbirthday');
 	    var input_age= document.getElementById('editage');
+	    var input_sex= document.getElementById('editsex');
 	    var input_score= document.getElementById('editscore');
+
 
 	    if (input_id == "" || input_id == null) {
 	    	alert("请输入学員id！！！");
@@ -118,6 +108,10 @@ $(function(){
 	    	return false;
 	    }
 
+	    if (input_sex == "" || input_sex == null) {
+	    	alert("请输入学員性別！！！");
+	    	return false;
+	    }
 	    if (input_score == "" || input_score == null) {
 	    	alert("请输入学員成绩！！！");
 	    	return false;
@@ -129,25 +123,22 @@ $(function(){
 </script>
 </head>
 <body>
-<img src="./images/header.jpg" />
+<img src="./images/student_head.jpg" />
 ${msg}
 <h1 align="center">学生情報管理</h1>
 
 <div id="all_comm" class="all"  >
-  <h2 align="center">stuent 情報一览</h2>
-  <div class="hoge2A">クリックすると緑色になります</div>
-  <div class="hoge1">
-このテキストは青くなりますこのテキストは青くなりますこのテキストは青くなりますこのテキストは青くなりますこのテキストは青くなりますこのテキストは青くなりますこのテキストは青くなりますこのテキストは青くなりますこのテキストは青くなりますこのテキストは青くなりますこのテキストは青くなりますこのテキサスは青くなりますこのテキストは青くなりますこのテキストは青くなりますこのテキストは青くなりますこのテキストは青くなりますこのテキストは青くなります
-</div>
+  <h2 align="center">STUENT信息一览</h2>
   <table id="items" >
 	<tr>
 		<td>id</td>
 		<td>姓名</td>
 		<td>出生年月</td>
 		<td>年龄</td>
+		<td>性別</td>
 		<td>分数</td>
-		<td>電話番号</td>
-		<td>郵便番号</td>
+	    <td>国籍</td>
+
 	</tr>
 
     <c:forEach items="${students}" var="student" >
@@ -156,9 +147,10 @@ ${msg}
 			<td id="name${student.id }">${student.name}</td>
 			<td id="birthday${student.id}">${student.birthday}</td>
 			<td id="age${student.id }">${student.age}</td>
+			<td id="sex${student.id }">${student.sex}</td>
 			<td id="score${student.id}">${student.score}</td>
-		    <td id="telephone${student.id}">${student.telephone}</td>
-		   　<td id="poslnumber${student.id}">${student.poslnumber}</td>
+
+			<td id="country${student.id}">${student.country}</td>
 		 </tr>
 	 </c:forEach>
   </table>
@@ -177,9 +169,13 @@ ${msg}
 		<input id="addbirthday" type="text" placeholder="出生年月" name="birthday" />
 		<input id="addage" type="text" placeholder="年龄" name="age" />
 		<input id="addscore" type="text" placeholder="分数" name="score" />
-	    <input id="addtelephone" type="text" placeholder="電話番号" name="telephone" />
-	     <input id="addaddress" type="text" placeholder="住所" name="addaddress" />
-		<input type="button" value="添加" onClick="addCheckForm()"/>
+
+<!-- 電話番号、郵便番号 を追加する-->
+		<input id="addTelephone" type="text" placeholder="電話番号" name="telephone" />
+		<input id="addPostalCode" type="text" placeholder="郵便番号" name="postalCode" />
+
+		<input type="button" value="添加学员" onclick="addCheckForm()"/>
+
 	  </form>
 	</div>
 
@@ -196,7 +192,11 @@ ${msg}
 		<input id="editname" type="text" placeholder="姓名" name="name" />
 		<input id="editbirthday" type="text" placeholder="出生年月" name="birthday" />
 		<input id="editage" type="text" placeholder="年龄" name="age" />
-		<input id="editscore" type="text" placeholder="分数" name="score" />
+		<input id="editsex" type="text" placeholder="性別" name="sex" />
+        <input id="editscore" type="text" placeholder="分数" name="score" />
+		<input id="editTelephone" type="text" placeholder="電話番号" name="telephone" />
+		<input id="editPostalCode" type="text" placeholder="郵便番号" name="postalCode" />
+
 		<input type="button" value="确定修改" onclick="editCheckForm()"/>
 	  </form>
 	</div>
