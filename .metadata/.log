@@ -1,0 +1,31 @@
+!SESSION 2018-07-08 17:34:00.969 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2018-07-08 17:34:46.039
+!MESSAGE キーバインドの競合が発生しました。 通常のアクセラレーター操作を妨げる可能性があります。
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-07-08 17:34:46.039
+!MESSAGE F10 の競合が発生しました:
+Binding(F10,
+	ParameterizedCommand(Command(org.eclipse.ui.window.preferences,設定,
+		設定ダイアログを開きます,
+		Category(org.eclipse.ui.category.window,ウィンドウ,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@21ff063e,
+		[Lorg.eclipse.e4.ui.internal.workbench.Parameter;@6df2e1e1,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(F10,
+	ParameterizedCommand(Command(org.seasar.sastrutsplugin.command.ViewOnServer,サーバーで表示,
+		,
+		Category(org.seasar.sastrutsplugin.category,SAStruts プラグイン,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@64cbb32b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY jp.gr.java_conf.ussiy.app.propedit 1 0 2018-07-08 17:34:49.976
+!MESSAGE properties loading for project 'RemoteSystemsTempFiles'
