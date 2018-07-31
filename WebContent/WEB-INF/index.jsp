@@ -121,7 +121,7 @@ tr:nth-child(odd) {
 	    	alert("请输入学員成绩！！！");
 	    	return false;
 	    }
-
+	 
        if (input_country == "" || input_score == null) {
     	   alert("请输入学員国籍！！！");
     	  return false;

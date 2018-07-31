@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.student.bean.Student;
 import com.student.bean.Teacher;
 import com.student.dao.StudentDao;
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
-import com.teacher.dao.TeacherDao;
+import com.student.dao.TeacherDao;
+
 
 @Controller
 public class StudentController {
@@ -63,7 +63,7 @@ public class StudentController {
 			System.out.println(Teacher);
 			int id = Teacher.getId();
 			if (id == 3) {
-				System.out.println(Teacher.getTeachername());
+				System.out.println(Teacher.getName());
 
 			}
 
