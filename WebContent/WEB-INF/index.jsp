@@ -12,6 +12,7 @@
 </style>
 <style type="text/css">
 /* 偶数 */
+
 tr:nth-child(odd) {
 	background: white;
 }
@@ -32,8 +33,10 @@ tr:nth-child(odd) {
 	    var input_name= document.getElementById('addname').value;
 	    var input_birthday= document.getElementById('addbirthday').value;
 	    var input_age= document.getElementById('addage').value;
-	    var input_age= document.getElementById('addsex').value;
+	    var input_sex= document.getElementById('addsex').value;
 	    var input_score= document.getElementById('addscore').value;
+	    var input_country= document.getElementById('addcountry').value;
+	    var input_myNumber= document.getElementById('addmyNumber').value;
 
 	    if (input_name == "" || input_name == null) {
 	    	alert("请输入学員姓名！！！");
@@ -58,6 +61,14 @@ tr:nth-child(odd) {
 	    	alert("请输入学員成绩！！！");
 	    	return false;
 	    }
+ 		if (input_country == "" || input_score == null) {
+ 			alert("请输入学員国籍！！！");
+	　　　　　　　return false;
+　　　　　　　}
+ 		if (input_myNumber == "" || input_score == null) {
+　　　　		alert("请输入学員個人情報！！！");
+　　　　　　　　　　return false;
+　　　　　　　}
 
 
 		form.submit();
@@ -87,12 +98,6 @@ tr:nth-child(odd) {
 	    var input_sex= document.getElementById('editsex');
 	    var input_score= document.getElementById('editscore');
 
-
-	    if (input_id == "" || input_id == null) {
-	    	alert("请输入学員id！！！");
-	    	return false;
-	    }
-
 	    if (input_name == "" || input_name == null) {
 	    	alert("请输入学員姓名！！！");
 	    	return false;
@@ -117,6 +122,16 @@ tr:nth-child(odd) {
 	    	return false;
 	    }
 
+       if (input_country == "" || input_score == null) {
+    	   alert("请输入学員国籍！！！");
+    	  return false;
+        }
+       if (input_myNumber == "" || input_score == null) {
+    	   alert("请输入学員個人情報！！！");
+    	  return false;
+        }
+
+
 		form.submit();
 		return true;
 	}
@@ -138,6 +153,7 @@ ${msg}
 		<td>性別</td>
 		<td>分数</td>
 	    <td>国籍</td>
+	    <td>個人情報</td>
 
 	</tr>
 
@@ -149,8 +165,8 @@ ${msg}
 			<td id="age${student.id }">${student.age}</td>
 			<td id="sex${student.id }">${student.sex}</td>
 			<td id="score${student.id}">${student.score}</td>
-
-			<td id="country${student.id}">${student.country}</td>
+            <td id="country${student.id}">${student.country}</td>
+            <td id="myNumber${student.id}">${student.myNumber}</td>
 		 </tr>
 	 </c:forEach>
   </table>
@@ -168,11 +184,10 @@ ${msg}
 		<input id="addname" type="text" placeholder="姓名" name="name" />
 		<input id="addbirthday" type="text" placeholder="出生年月" name="birthday" />
 		<input id="addage" type="text" placeholder="年龄" name="age" />
+		<input id="addsex" type="text" placeholder="性別" name="sex" />
 		<input id="addscore" type="text" placeholder="分数" name="score" />
-
-<!-- 電話番号、郵便番号 を追加する-->
-		<input id="addTelephone" type="text" placeholder="電話番号" name="telephone" />
-		<input id="addPostalCode" type="text" placeholder="郵便番号" name="postalCode" />
+        <input id="addcountry" type="text" placeholder="国籍" name="country" />
+        <input id="addmyNumber" type="text" placeholder="個人情報" name="myNumber" />
 
 		<input type="button" value="添加学员" onclick="addCheckForm()"/>
 
@@ -194,8 +209,7 @@ ${msg}
 		<input id="editage" type="text" placeholder="年龄" name="age" />
 		<input id="editsex" type="text" placeholder="性別" name="sex" />
         <input id="editscore" type="text" placeholder="分数" name="score" />
-		<input id="editTelephone" type="text" placeholder="電話番号" name="telephone" />
-		<input id="editPostalCode" type="text" placeholder="郵便番号" name="postalCode" />
+
 
 		<input type="button" value="确定修改" onclick="editCheckForm()"/>
 	  </form>

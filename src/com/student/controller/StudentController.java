@@ -100,7 +100,7 @@ public class StudentController {
 	 * @return 返回值类型： String
 	 */
 	@RequestMapping(value = "/add")
-	public String addStu(String name, String birthday, String age, String sex, String score, String country,
+	public String addStu(String name, String birthday, String age, String sex, String score, String country,String myNumber,
 
 			Model model) {
 
@@ -110,8 +110,11 @@ public class StudentController {
 		student.setName(name);
 		student.setBirthday(birthday);
 		student.setAge(Integer.valueOf(age));
-		student.setAge(Integer.valueOf(sex));
+		student.setSex(String.valueOf(sex));
 		student.setScore(Double.parseDouble(score));
+		student.setCountry(String.valueOf(country));
+		student.setMyNumber(String.valueOf(myNumber));
+
 
 		// 電話番号、郵便番号を追加する
 
@@ -164,7 +167,7 @@ public class StudentController {
 	 * @return 返回值类型： String
 	 */
 	@RequestMapping(value = "/update")
-	public String updateStu(String id, String name, String birthday, String age,String sex, String score, String country,
+	public String updateStu(String id, String name, String birthday, String age,String sex, String score, String country,String myNumber,
 			 Model model) {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");

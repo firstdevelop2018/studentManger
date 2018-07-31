@@ -27,7 +27,8 @@ public class StudentMapper implements RowMapper<Student> {
 		student.setAge(rs.getInt(4));
 		student.setSex(rs.getString(5));
 		student.setScore(rs.getDouble(6));
-		student.setCountry(rs.getString(8));
+		student.setCountry(rs.getString(7));
+		student.setMyNumber(rs.getString(8));
 		return student;
 	}
 
